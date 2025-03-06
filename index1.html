@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<!--From https://codepen.io/frytyler/pen/EGdtg--&gt;-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico&#39; rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo&#39; rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300&#39; rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&#39; rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+ 
+</head>
+
+<body>
+    
+ <div class="login">
+  <h1>Predict Crop Yield</h1>
+ 
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+      <input type="text" name="Region" placeholder="Region" required="required" />
+        <input type="text" name="Soil_Type" placeholder="Soil_Type" required="required" />
+    <input type="text" name="Crop" placeholder="Crop" required="required" />
+    <input type="text" name="temperature" placeholder="temperature" required="required" />
+        <input type="text" name="Rainfall_mm" placeholder="Rainfall_mm" required="required" />
+    <input type="text" name="whater " placeholder="whater " required="required" />
+    <input type="text" name="Weather_Condition" placeholder="Weather_Condition" required="required" />
+    <input type="text" name="Soil_ph" placeholder="Soil_ph" required="required" />
+    <input type="text" name="N(Nitrogen)" placeholder="N(Nitrogen)" required="required" />
+<input type="text" name="P(Phosphorus)" placeholder="P(Phosphorus)" required="required" />
+<input type="text" name="K(Potassium)" placeholder="K(Potassium)" required="required" />
+    <input type="text" name="Irrigation_Used" placeholder="Irrigation_Used" required="required" />
+<input type="text" name="Fertilizer_Used" placeholder="Fertilizer_Used" required="required" />
+<input type="text" name="Days_to_Harvest" placeholder="Days_to_Harvest" required="required" />
+
+
+
+
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
